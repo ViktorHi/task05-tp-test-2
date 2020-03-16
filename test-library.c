@@ -67,12 +67,12 @@ int test_mul() {
 	more general purpose test framework.
 */
 int run_tests() {
-	
+
 	if (E_FAIL==test_compare_date_func()){
 		printf("failed test_compare_date()\n");
 		return E_FAIL;
 	}
-`
+
 
 	if (E_FAIL == test_mul()){
 			printf("failed test_mul()\n");

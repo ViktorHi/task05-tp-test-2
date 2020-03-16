@@ -46,61 +46,13 @@
    ************************************************
 */
 
-
-/*   test cases for op_and() function  */
-int test_and() {
-	
-	if (op_and(3,4) != (3&4))
-		return E_FAIL;
-
-	if (op_and(2,7) != (2&7))
-		return E_FAIL;
-
-	// un comment me to make this fail!
-	//if ((f_ib_and(2,7) == (2&7))
-	//	return E_FAIL;)
-
-	return S_OK;
+int test_compare_date_func(){
+	char* err_mess=NULL
+	if(compare_date("12-12-2012","12-12-2012",&err_mess)==0 &&err_mess==NULL){
+		return S_OK
+	}
+	return E_FAIL;
 }
-
-/*   test cases for op_or() function  */
-int test_or() {
-	if (op_or(3,4) != (3|4)) 
-		return E_FAIL;
-	
-	return S_OK;
-}
-
-/*   test cases for op_xor() function  */
-int test_xor() {
-	if (op_xor(3,4) != ((3^4))) 
-		return E_FAIL;
-	return S_OK;
-}
-
-
-/*   test cases for op_xnor() function  */
-int test_xnor() {
-	if (op_xnor(3,4) != (~(3^4))) 
-		return E_FAIL;
-	return S_OK;
-}
-
-/*   test cases for op_add() function  */
-int test_add() {
-	if (op_add(3,4) != (3+4)) 
-		return E_FAIL;
-	return S_OK;
-}
-
-
-/*   test cases for op_sub() function  */
-int test_sub() {
-	if (op_sub(3,4) != (3-4)) 
-		return E_FAIL;
-	return S_OK;
-}
-
 
 /*   test cases for op_mul() function  */
 int test_mul() {
@@ -115,36 +67,10 @@ int test_mul() {
 	more general purpose test framework.
 */
 int run_tests() {
-	if (E_FAIL == test_and()) {
-		printf("failed test_and()\n");
-		return E_FAIL;
+	if (E_FAIL==test_compare_date_func()){
+		printf("failed test_compare_date()\n")
 	}
-
-	if (E_FAIL == test_or()) {
-		printf("failed test_or()\n");
-		return E_FAIL;
-	}
-	
-	if (E_FAIL == test_xor()){
-		printf("failed test_xor()\n");
-		return E_FAIL;
-	}
-
-	if (E_FAIL == test_xnor()){
-			printf("failed test_xnor()\n");
-			return E_FAIL;
-		}
-
-	if (E_FAIL == test_add()){
-			printf("failed test_add()\n");
-			return E_FAIL;
-		}
-
-	if (E_FAIL == test_sub()){
-			printf("failed test_sub()\n");
-			return E_FAIL;
-		}
-
+`
 
 	if (E_FAIL == test_mul()){
 			printf("failed test_mul()\n");

@@ -47,9 +47,9 @@
 */
 
 int test_compare_date_func(){
-	char* err_mess=NULL
+	char* err_mess=NULL;
 	if(compare_date("12-12-2012","12-12-2012",&err_mess)==0 &&err_mess==NULL){
-		return S_OK
+		return S_OK;
 	}
 	return E_FAIL;
 }
@@ -67,8 +67,10 @@ int test_mul() {
 	more general purpose test framework.
 */
 int run_tests() {
+	
 	if (E_FAIL==test_compare_date_func()){
-		printf("failed test_compare_date()\n")
+		printf("failed test_compare_date()\n");
+		return E_FAIL;
 	}
 `
 
